@@ -1,0 +1,17 @@
+{
+  "name": "claude-yank",
+  "owner": { "name": "Aryan Hamedani", "url": "https://github.com/AryanHamedani" },
+  "metadata": {
+    "description": "yank: copy blocks, replies, prompts and ranges from a Claude Code conversation in two keys."
+  },
+  "plugins": [
+    {
+      "name": "yank",
+      "source": "./",
+      "description": "Copy anything from a Claude Code conversation in two keys: a block, a reply, a prompt, a range of turns, the commands Claude ran or the whole transcript.",
+      "version": "0.3.1",
+      "category": "productivity",
+      "keywords": ["clipboard", "copy", "code-blocks", "keyboard", "shortcuts", "transcript"]
+    }
+  ]
+}

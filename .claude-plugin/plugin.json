@@ -1,0 +1,123 @@
+{
+  "name": "yank",
+  "version": "0.3.1",
+  "description": "Copy anything from a Claude Code conversation in two keys: a block, a reply, a prompt, a range of turns, the commands Claude ran or the whole transcript.",
+  "author": {
+    "name": "Aryan Hamedani",
+    "url": "https://github.com/AryanHamedani"
+  },
+  "homepage": "https://github.com/AryanHamedani/claude-yank",
+  "repository": "https://github.com/AryanHamedani/claude-yank",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "clipboard",
+    "copy",
+    "code-blocks",
+    "keyboard",
+    "shortcuts",
+    "transcript",
+    "productivity",
+    "mod"
+  ],
+  "icon": "./assets/icon.png",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "look": {
+      "type": "string",
+      "title": "Block look",
+      "description": "card: each block Claude wrote for you in a frame captioned with its key. quiet: the caption alone, no frame. off: blocks drawn as Claude Code draws them.",
+      "options": [
+        "card",
+        "quiet",
+        "off"
+      ],
+      "default": "card"
+    },
+    "border": {
+      "type": "string",
+      "title": "Frame border",
+      "description": "The line a card is drawn with.",
+      "options": [
+        "round",
+        "single",
+        "double",
+        "bold",
+        "dashed",
+        "classic"
+      ],
+      "default": "round"
+    },
+    "frameColor": {
+      "type": "string",
+      "title": "Frame color",
+      "description": "A Claude Code theme key (subtle, inactive, promptBorder, suggestion, claude, …) so it follows your theme, or a #rrggbb color.",
+      "default": "subtle"
+    },
+    "accentColor": {
+      "type": "string",
+      "title": "Accent color",
+      "description": "The color of block keys and range words: a theme key (suggestion, claude, permission, …) or a #rrggbb color.",
+      "default": "suggestion"
+    },
+    "paneBackground": {
+      "type": "string",
+      "title": "Palette background",
+      "description": "What the palette pane paints behind itself: transparent shows your terminal's own background; or a theme key or hex color.",
+      "default": "transparent"
+    },
+    "ids": {
+      "type": "boolean",
+      "title": "Number prompts",
+      "description": "Show each prompt's turn number, faint, at its right edge: what o3, x2-4 and the palette's #n refer to.",
+      "default": true
+    },
+    "autoCopy": {
+      "type": "string",
+      "title": "Copy automatically",
+      "description": "off: never touch the clipboard unasked. single: when a reply has exactly one block, it is on your clipboard as Claude finishes. all: every block of the reply, each its own clipboard-history entry.",
+      "options": [
+        "off",
+        "single",
+        "all"
+      ],
+      "default": "off"
+    },
+    "band": {
+      "type": "boolean",
+      "title": "Blocks above the prompt",
+      "description": "Keep the latest reply's blocks in a row above the prompt; a bare digit in an empty prompt copies one.",
+      "default": false
+    },
+    "confirm": {
+      "type": "boolean",
+      "title": "Say what was copied",
+      "description": "A short toast after each copy.",
+      "default": true
+    },
+    "guide": {
+      "type": "boolean",
+      "title": "Teach Claude to fence what you copy",
+      "description": "Add a short note to Claude's system prompt: every command, snippet or message for you goes in its own titled block.",
+      "default": true
+    },
+    "keys": {
+      "type": "string",
+      "title": "Palette keys",
+      "description": "Remap any of: reply prompt both blocks commands all range prev next, as action=letter pairs, e.g. \"prev=k next=j\". Each action needs its own letter after the remap, or all keys stay default; digits stay the blocks'.",
+      "default": "reply=o prompt=p both=x blocks=b commands=c all=t range=r prev=h next=l"
+    },
+    "speakers": {
+      "type": "string",
+      "title": "Names in copied exchanges",
+      "description": "How a copied exchange or transcript names the two sides, as <your name>|<Claude's name>.",
+      "default": "You|Claude"
+    },
+    "stackGapMs": {
+      "type": "number",
+      "title": "Gap between stacked copies (ms)",
+      "description": "When several items are copied, the pause between them so a clipboard manager records each one. 0 copies them back to back.",
+      "default": 350
+    }
+  }
+}
